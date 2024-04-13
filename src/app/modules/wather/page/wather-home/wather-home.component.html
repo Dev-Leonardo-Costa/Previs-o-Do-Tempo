@@ -1,0 +1,26 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input
+      type="text"
+      placeholder="Buscar Localização"
+      name="city"
+      [(ngModel)]="initialCityName"
+      style="background-color: azure; color: black;"
+    />
+
+    <span (click)="onSubmit()">
+        <fa-icon
+        animation="fade"
+        style="--fa-animation-duration: 2s; cursor: pointer;"
+        size="lg"
+        class="search-icon"
+        [icon]="seacherIcon"
+        >
+
+        </fa-icon>
+    </span>
+  </form>
+</div>
+
+<app-wather-card *ngIf="watherDatas" [watherDatasCard]="watherDatas">
+</app-wather-card>
